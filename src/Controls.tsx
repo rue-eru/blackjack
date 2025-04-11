@@ -51,6 +51,7 @@ const Controls: React.FC<ControlsProps> = ({ onHit, onStand, onBet , balance, ha
                         required
                         value={betAmount}
                         onChange={(e) => setBetAmount(Math.min(Number(e.target.value), balance))}
+                        aria-label="Input your bet"
                     />
                     <div className="absolute right-1 top-1/2 transform -translate-y-1/2 flex flex-col">
                         <button 
@@ -67,11 +68,18 @@ const Controls: React.FC<ControlsProps> = ({ onHit, onStand, onBet , balance, ha
                         </button>
                     </div>
                 </div>
-                <Button variant="gold" onClick={handleBet}>BET</Button>
+                <Button 
+                    variant="gold" 
+                    onClick={handleBet}
+                    aria-label="Place a bet"
+                >
+                    BET
+                </Button>
                 <Button
                     onClick={onNextRound}
                     disabled={balance <= 0}
                     variant="emerald"
+                    aria-label="Start a next round"
                 >
                         NEXT ROUND
                 </Button>
@@ -82,6 +90,7 @@ const Controls: React.FC<ControlsProps> = ({ onHit, onStand, onBet , balance, ha
                     variant="primary"
                     onClick={onHit}
                     disabled={!canPlayerAct || hasStood || playerValue > 21}
+                    aria-label="Hit"
                 >
                     HIT
                 </Button>
@@ -89,12 +98,14 @@ const Controls: React.FC<ControlsProps> = ({ onHit, onStand, onBet , balance, ha
                 variant="danger"
                     onClick={onStand}
                     disabled={!canPlayerAct ||  hasStood}
+                    aria-label="Stand"
                 >
                     STAND
                 </Button>
                 <Button 
                     variant="gold"
                     onClick={onNewGame}
+                    aria-label="Start a new game"
                 >
                     NEW GAME
                 </Button>

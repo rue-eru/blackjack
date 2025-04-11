@@ -30,9 +30,9 @@ const CardGenerator = ({ card, hidden = false }: CardProps) => {
         </div>
       </div>
 
-      {/* Back of card (visible when hidden) */}
+      {/* Back of a card (visible when hidden) */}
       <div 
-        className={`absolute w-full h-full rounded-md shadow-lg border-2 border-white transition-all duration-300 card-back ${hidden ? 'opacity-100' : 'opacity-0'}`}
+        className={`absolute w-full h-full rounded-md shadow-lg border-2 border-white transition-all duration-300 card-back ${hidden ? 'opacity-100' : 'opacity-0'} flip-card`}
       >
       </div>
     </div>

@@ -43,6 +43,8 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 /*card animations*/
+
+/* Cards fly in from top */
 @keyframes dealCard {
   0% {
     transform: translateY(-20px) rotate(-5deg);
@@ -65,4 +67,20 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .flip-card.flipped {
   transform: rotateY(180deg);
+}
+
+/* Cards flip like turning over */
+.flip-card {
+  transition: transform 0.6s;
+}
+
+.flip-card.flipped {
+  transform: rotateY(180deg);
+}
+
+/*mobile responsiveness*/
+@media (max-width: 640px) {
+  .hand {
+    flex-direction: column;
+  }
 }

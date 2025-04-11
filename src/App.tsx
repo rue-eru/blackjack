@@ -103,6 +103,7 @@ function App() {
     } else {
       setGameStatus("lost");
     }
+
   }
 
   // No actions allowed if no bet is placed
